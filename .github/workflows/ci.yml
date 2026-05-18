@@ -6,19 +6,12 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x]
+        node-version: [16.x, 17.x]
         platform:
         - os: ubuntu-22.04
           shell: bash
         - os: macos-14
           shell: bash
-        exclude:
-        - node-version: 12.x
-          platform:
-            os: macos-14
-        - node-version: 14.x
-          platform:
-            os: macos-14
       fail-fast: false
 
     runs-on: ${{ matrix.platform.os }}
